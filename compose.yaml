@@ -1,0 +1,14 @@
+services:
+  redis:
+    image: redis:8.4.2
+    container_name: redis-practice
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-data:/data
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    restart: unless-stopped
+
+volumes:
+  redis-data:

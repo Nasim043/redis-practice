@@ -1,0 +1,16 @@
+SET name "redis"
+GET name
+
+INCR counter
+INCR counter
+GET counter
+
+LPUSH tasks "learn redis"
+LPUSH tasks "practice docker"
+LRANGE tasks 0 -1
+
+HSET user:1 name "Alice" age "20"
+HGETALL user:1
+
+EXPIRE name 60
+TTL name
